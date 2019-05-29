@@ -20,6 +20,12 @@ SET NAMES 'utf8';
 [jerry@j myDataConvert]$ git add .
 [jerry@j myDataConvert]$ git commit -m"freemarker"
 [jerry@j myDataConvert]$ git push
+[jerry@j myDataConvert]$ vim /etc/my.cnf.d/server.cnf
+
+[mysqld]
+init-connect='SET NAMES utf8'
+character-set-server = utf8
+
 
     public Template[] list(Connection conn, String owner, String catagory) {
         String sql;
