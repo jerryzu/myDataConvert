@@ -26,6 +26,15 @@ SET NAMES 'utf8';
 init-connect='SET NAMES utf8'
 character-set-server = utf8
 
+CREATE TABLE
+students
+(
+        id INT,
+        name VARCHAR(32),
+        teacher VARCHAR(32)
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_unicode_ci;
+
 
     public Template[] list(Connection conn, String owner, String catagory) {
         String sql;

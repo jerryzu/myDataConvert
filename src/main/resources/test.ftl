@@ -1,7 +1,7 @@
-            root.put("name", "${name}");
-            root.put("age", "${age}");
+root.put("name", "${name}");
+root.put("age", "${age}");
 <#list students as student>
-    ${student.id}
-    ${student.name}
-    ${student.teacher}
+${student.id}
+${student.name}
+${student.teacher}
 </#list>
