@@ -13,6 +13,8 @@ public class Student extends BaseRowModel {
     @ExcelProperty(value = "指导老师", index = 2)
     private String teacher;
 
+    private Teacher teachers;
+
     public Integer getId() {
         return id;
     }
@@ -35,6 +37,14 @@ public class Student extends BaseRowModel {
 
     public void setTeacher(String teacher) {
         this.teacher = teacher;
+    }
+
+    public Teacher getTeachers() {
+        return teachers;
+    }
+
+    public void setTeachers(Teacher teachers) {
+        this.teachers = teachers;
     }
 
     @Override

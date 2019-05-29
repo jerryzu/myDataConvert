@@ -35,6 +35,14 @@ public class DoForFreemarker {
             String sql = "SELECT * from students";
             try {
                 students = runner.query(sql, new BeanListHandler<Student>(Student.class));
+
+                for(Student student :students) {
+                    Teacher tech = new Teacher();
+                    tech.setId(99999);
+                    tech.setName("中文");
+                    student.setTeachers(tech);
+                }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }

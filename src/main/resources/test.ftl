@@ -4,4 +4,6 @@ root.put("age", "${age}");
 ${student.id}
 ${student.name}
 ${student.teacher}
+${student.teachers.id}
+${student.teachers.name}
 </#list>
