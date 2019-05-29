@@ -17,6 +17,10 @@ show variables like "character_set_%"
 set character_set_database=utf8;
 SET NAMES 'utf8';
 
+[jerry@j myDataConvert]$ git add .
+[jerry@j myDataConvert]$ git commit -m"freemarker"
+[jerry@j myDataConvert]$ git push
+
     public Template[] list(Connection conn, String owner, String catagory) {
         String sql;
         QueryRunner runner = new QueryRunner();
