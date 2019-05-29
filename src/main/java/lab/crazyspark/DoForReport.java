@@ -14,11 +14,11 @@ import com.alibaba.excel.support.ExcelTypeEnum;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
-public class DoReport {
+public class DoForReport {
 
     public static void main(String args[]) {
-        DoReport doReport = new DoReport();
-        doReport.writeExcel();
+        DoForReport doForReport = new DoForReport();
+        doForReport.writeExcel();
     }
 
     public void writeExcel() {
