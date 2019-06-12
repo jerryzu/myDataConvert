@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.apache.commons.pool2.impl.GenericObjectPool;
-import org.apache.commons.dbcp2.BasicDataSourceFactory;
 
 public class MyDBCPDataSource {
 
