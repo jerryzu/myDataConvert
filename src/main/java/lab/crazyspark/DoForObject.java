@@ -2,6 +2,7 @@ package lab.crazyspark;
 
 import java.io.File;
 import java.io.Writer;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.wrappers.StringTrimmedResultSet;
 
 public class DoForObject {
     public static void main(String args[]) {
@@ -26,25 +28,31 @@ public class DoForObject {
         Configuration cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
         try {
             cfg.setDirectoryForTemplateLoading(new File("/app/work/myDataConvert/src/main/resources"));
-            Template template = cfg.getTemplate("object.ftl");
+            Template template = cfg.getTemplate("insert.ftl");
 
             List<CSObject> csobjects = new ArrayList<CSObject>();
 
-            QueryRunner runner = new QueryRunner(JDBCUitls.getDataSource());
+            QueryRunner runner = new QueryRunner(JDBCUitls.getDataSource()) {
+                @Override
+                protected ResultSet wrap(ResultSet rs) {
+                    return StringTrimmedResultSet.wrap(rs);
+                }
+            };
 
-            String sql = "SELECT * from sys_objects where objectname = 'Company'";
+            String sql = "SELECT * from sys_objects where objectname <> 'Company' order by objectid";
             try {
                 csobjects = runner.query(sql, new BeanListHandler<CSObject>(CSObject.class));
 
                 for (CSObject obj : csobjects) {
                     String propsql = String.format("SELECT * from sys_properties WHERE objectid = %s",
-                    obj.getObjectid());
+                            obj.getObjectid());
                     List<CSProperty> props = runner.query(propsql, new BeanListHandler<CSProperty>(CSProperty.class));
                     for (CSProperty prop : props) {
-                        String propvalidatorsql = String.format("SELECT * FROM sys_prop_validator WHERE validatorid >= 1 and objectid = %d and propertyid = %d",
-                        prop.getObjectid(), prop.getPropertyid());
-                        System.out.println(propvalidatorsql);
-                        List<CSPropValidator> prop_validators = runner.query(propvalidatorsql, new BeanListHandler<CSPropValidator>(CSPropValidator.class));
+                        String propvalidatorsql = String.format(
+                                "SELECT * FROM sys_prop_validator  WHERE validatorid >= 1 and objectid = %d and propertyid = %d",
+                                prop.getObjectid(), prop.getPropertyid());
+                        List<CSPropValidator> prop_validators = runner.query(propvalidatorsql,
+                                new BeanListHandler<CSPropValidator>(CSPropValidator.class));
                         prop.setPropValidators(prop_validators);
                     }
                     obj.setProperties(props);

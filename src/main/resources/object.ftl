@@ -19,11 +19,11 @@ public class ${csobject.objectname} {
     }
 
     <#list csobject.properties as prop>
-    public  ${prop.datatype} get${prop.propertyname}() {
+    public  ${prop.datatype} get${prop.propertyname?cap_first}() {
         return ${prop.propertyname};
     }
 
-    public void set${prop.propertyname}(${prop.datatype} ${prop.propertyname}) {
+    public void set${prop.propertyname?cap_first}(${prop.datatype} ${prop.propertyname}) {
         this.${prop.propertyname} = ${prop.propertyname};
     }
     </#list>
