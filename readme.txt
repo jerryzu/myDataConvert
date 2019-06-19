@@ -53,3 +53,5 @@ select replace(replace('全世界无产者',chr(13),''),chr(10),'') || '联合�
 
  create table vw_rul_dev as select * from vw_rul@svr；
 
+？？？？？
+暂时在属性注释中，增加propid为0,注释用于对象(类)本身
