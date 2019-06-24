@@ -1,0 +1,4 @@
+git add .
+git commit -m"增加mysql数据字典"
+git push origin
+
