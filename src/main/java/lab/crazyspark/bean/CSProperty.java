@@ -1,4 +1,4 @@
-package lab.crazyspark;
+package lab.crazyspark.bean;
 
 import java.util.Date;
 import java.util.List;
@@ -18,6 +18,7 @@ public class CSProperty {
     private Integer propertyid;
 	private String propertyname;
     private String datatype;
+    private String identifyprop;
 	private List<CSPropValidator> prop_validators;
 
 
@@ -59,5 +60,13 @@ public class CSProperty {
 
     public void setDatatype(String datatype) {
         this.datatype = datatype;
+    }
+
+    public String getIdentifyprop() {
+        return identifyprop;
+    }
+
+    public void setIdentifyprop(String identifyprop) {
+        this.identifyprop = identifyprop;
     }
 }

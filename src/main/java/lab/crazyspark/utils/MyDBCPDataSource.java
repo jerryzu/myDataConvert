@@ -1,4 +1,4 @@
-package lab.crazyspark;
+package lab.crazyspark.utils;
 
 import java.io.IOException;
 import java.util.Properties;

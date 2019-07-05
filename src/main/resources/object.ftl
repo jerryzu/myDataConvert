@@ -1,22 +1,19 @@
 <#list objects as csobject>
-package lab.crazyspark.bean;
+package lab.aml.bean;
 
-import lab.crazyspark.annotation.Entity;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.Length;
+import lab.aml.constraint.IDTypeCheck;
+import lab.aml.constraint.SexCheck;
+import lab.aml.annotation.Key;
 
-@Entity(table = "${csobject.tablename}")
 public class ${csobject.objectname} {
-    <#list csobject.properties as prop>
-    <#if prop.propValidators??>
-    <#list prop.propValidators as prop_validator>
-    ${prop_validator.validatorname}
+    <#list csobject.properties as prop> <#if (prop.identifyprop! == '1')>@Key</#if><#if prop.propValidators??><#list prop.propValidators as prop_validator>@${prop_validator.validatorname}</#list></#if> 
+private ${prop.datatype} ${prop.propertyname};
+    
     </#list>
-</#if> 
-    private ${prop.datatype} ${prop.propertyname};
-    </#list>
-
-    public void print() {
-        System.out.println(String.format("${csobject.objectname}:<#list csobject.properties as prop>  ${prop.propertyname}%s</#list>"<#list csobject.properties as prop>,  ${prop.propertyname}</#list>));   
-    }
 
     <#list csobject.properties as prop>
     public  ${prop.datatype} get${prop.propertyname?cap_first}() {

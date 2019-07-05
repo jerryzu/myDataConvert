@@ -14,6 +14,9 @@ import com.alibaba.excel.support.ExcelTypeEnum;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
+import lab.crazyspark.bean.ReportItem;
+import lab.crazyspark.utils.JDBCUitls;
+
 public class DoForReport {
 
     public static void main(String args[]) {

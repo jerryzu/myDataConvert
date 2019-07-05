@@ -1,4 +1,4 @@
-package lab.crazyspark;
+package lab.crazyspark.utils;
 
 import java.sql.Connection;
 import java.sql.SQLException;

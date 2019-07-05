@@ -7,6 +7,9 @@ import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import org.apache.commons.dbutils.QueryRunner;
 
+import lab.crazyspark.bean.ReportItem;
+import lab.crazyspark.utils.JDBCUitls;
+
 public class ExcelListener extends AnalysisEventListener<ReportItem> {
     // 自定义用于暂时存储data。
     // 可以通过实例获取该值

@@ -14,6 +14,11 @@ import java.io.OutputStreamWriter;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import lab.crazyspark.bean.CSObject;
+import lab.crazyspark.bean.CSPropValidator;
+import lab.crazyspark.bean.CSProperty;
+import lab.crazyspark.utils.JDBCUitls;
+
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.wrappers.StringTrimmedResultSet;
@@ -28,7 +33,7 @@ public class DoForObject {
         Configuration cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
         try {
             cfg.setDirectoryForTemplateLoading(new File("/app/work/myDataConvert/src/main/resources"));
-            Template template = cfg.getTemplate("insert.ftl");
+            Template template = cfg.getTemplate("object.ftl");
 
             List<CSObject> csobjects = new ArrayList<CSObject>();
 
@@ -39,12 +44,12 @@ public class DoForObject {
                 }
             };
 
-            String sql = "SELECT * from sys_objects where objectname <> 'Company' order by objectid";
+            String sql = "SELECT * from sys_objects where objectname != 'InsPers' order by objectid";
             try {
                 csobjects = runner.query(sql, new BeanListHandler<CSObject>(CSObject.class));
 
                 for (CSObject obj : csobjects) {
-                    String propsql = String.format("SELECT * from sys_properties WHERE objectid = %s",
+                    String propsql = String.format("SELECT * from sys_properties WHERE objectid = %s order by propertyid",
                             obj.getObjectid());
                     List<CSProperty> props = runner.query(propsql, new BeanListHandler<CSProperty>(CSProperty.class));
                     for (CSProperty prop : props) {

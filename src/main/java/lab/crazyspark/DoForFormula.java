@@ -13,6 +13,9 @@ import java.io.OutputStreamWriter;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import lab.crazyspark.bean.FormulaItem;
+import lab.crazyspark.utils.JDBCUitls;
+
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 

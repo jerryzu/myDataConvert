@@ -1,4 +1,4 @@
-package lab.crazyspark;
+package lab.crazyspark.bean;
 
 import java.util.List;
 

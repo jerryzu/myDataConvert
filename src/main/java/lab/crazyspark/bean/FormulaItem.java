@@ -1,4 +1,4 @@
-package lab.crazyspark;
+package lab.crazyspark.bean;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.metadata.BaseRowModel;
