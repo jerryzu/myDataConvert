@@ -14,11 +14,10 @@ create table `${t.tablename}`(
 `${field.fieldname}` ${field.datatype}(${field.precision_},${field.scale_})   comment  '${field.fielddesc!""}' <#if field_has_next>,</#if>
 </#if>
 <#else>
-`${field.fieldname}`  ${field.datatype} ------------------------------------------------
+`${field.fieldname}`  ${field.datatype}   comment  '${field.fielddesc!""}' <#if field_has_next>,</#if>
 </#if> 	
 </#list>
 ) comment='${t.tabledesc!""}'
 /*!50500 partition by range  columns(pt)
-(partition pt20190704000000 values less than ('20190704999999') engine = innodb) */;
-
+(partition pt${.now?string("yyyyMMdd")}000000 values less than ('${.now?string("yyyyMMdd")}999999') engine = innodb) */;
 </#list>

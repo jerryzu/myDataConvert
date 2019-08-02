@@ -44,7 +44,7 @@ public class DoForTable {
                 }
             };
 
-            String sql = "SELECT * from sys_tables order by tableid";
+            String sql = "SELECT * from sys_tables where schemaname = 'cust' order by tableid";
             try {
                 cstables = runner.query(sql, new BeanListHandler<CSTable>(CSTable.class));
 
