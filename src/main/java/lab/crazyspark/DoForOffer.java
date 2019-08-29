@@ -14,28 +14,28 @@ import java.io.OutputStreamWriter;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import lab.crazyspark.bean.CSTable;
-import lab.crazyspark.bean.CSField;
+import lab.crazyspark.bean.CSOffer;
+import lab.crazyspark.bean.CSOfferItem;
 import lab.crazyspark.utils.JDBCUitls;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.wrappers.StringTrimmedResultSet;
 
-public class DoForTable {
+public class DoForOffer {
     public static void main(String args[]) {
-        DoForTable doForTable = new DoForTable();
-        doForTable.doFreemarker();
+        DoForOffer doForOffer  = new DoForOffer();
+        doForOffer.doFreemarker();
     }
 
     public void doFreemarker() {
         Configuration cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
         try {
             cfg.setDirectoryForTemplateLoading(new File("/app/work/myDataConvert/src/main/resources"));
-            Template template = cfg.getTemplate("table.ftl");
+            Template template = cfg.getTemplate("offer.ftl");
             template.setNumberFormat("#");
 
-            List<CSTable> cstables = new ArrayList<CSTable>();
+            List<CSOffer> csoffers = new ArrayList<CSOffer>();
 
             QueryRunner runner = new QueryRunner(JDBCUitls.getDataSource()) {
                 @Override
@@ -44,15 +44,15 @@ public class DoForTable {
                 }
             };
 
-            String sql = "SELECT * from sys_tables order by tableid";
+            String sql = "SELECT * from faenza.offers order by offerid";
             try {
-                cstables = runner.query(sql, new BeanListHandler<CSTable>(CSTable.class));
+                csoffers = runner.query(sql, new BeanListHandler<CSOffer>(CSOffer.class));
 
-                for (CSTable obj : cstables) {
-                    String fieldsql = String.format("SELECT * from sys_fields WHERE tableid = %s order by fieldid",
-                            obj.getTableid());
-                    List<CSField> fields = runner.query(fieldsql, new BeanListHandler<CSField>(CSField.class));
-                    obj.setFields(fields);
+                for (CSOffer obj : csoffers) {
+                    String offeritemsql = String.format("SELECT * from faenza.offeritems WHERE offerid = %s order by offerid, itemid",
+                            obj.getOfferid());
+                    List<CSOfferItem> offeritems = runner.query(offeritemsql, new BeanListHandler<CSOfferItem>(CSOfferItem.class));
+                    obj.setOfferitems(offeritems);
                 }
 
             } catch (SQLException e) {
@@ -60,7 +60,7 @@ public class DoForTable {
             }
 
             Map root = new HashMap();
-            root.put("tables", cstables);
+            root.put("offers", csoffers);
 
             Writer out = new OutputStreamWriter(System.out);
             template.process(root, out);

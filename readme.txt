@@ -78,3 +78,5 @@ FROM rpt_fxq_tb_company_ms partition (pt20170527000000)；
 
 	
 show create table ods_cthx_web_org_dpt_map
+
+ mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForTable" -Dexec.cleanupDaemonThreads=false
