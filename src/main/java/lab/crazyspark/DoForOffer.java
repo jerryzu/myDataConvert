@@ -11,6 +11,9 @@ import java.util.List;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -30,9 +33,17 @@ public class DoForOffer {
 
     public void doFreemarker() {
         Configuration cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
+        
+        OutputStreamWriter out = null;
         try {
-            cfg.setDirectoryForTemplateLoading(new File("/app/work/myDataConvert/src/main/resources"));
-            Template template = cfg.getTemplate("offer.ftl");
+            // cfg.setDirectoryForTemplateLoading(new File("/app/work/myDataConvert/src/main/resources"));
+            cfg.setDirectoryForTemplateLoading(new File("D:\\work\\myDataConvert\\src\\main\\resources"));
+            
+            cfg.setDefaultEncoding("UTF-8");
+            cfg.setNumberFormat("0.00");
+            // cfg.setObjectWrapper(new DefaultObjectWrapper());
+
+            Template template = cfg.getTemplate("faenza-offer.xml","utf-8");
             template.setNumberFormat("#");
 
             List<CSOffer> csoffers = new ArrayList<CSOffer>();
@@ -45,6 +56,7 @@ public class DoForOffer {
             };
 
             String sql = "SELECT * from faenza.offers order by offerid";
+
             try {
                 csoffers = runner.query(sql, new BeanListHandler<CSOffer>(CSOffer.class));
 
@@ -62,11 +74,23 @@ public class DoForOffer {
             Map root = new HashMap();
             root.put("offers", csoffers);
 
-            Writer out = new OutputStreamWriter(System.out);
+            out = new OutputStreamWriter(System.out, "UTF-8");
+            
+            FileOutputStream  fos = new FileOutputStream("d:\\1.xml", false);
+            out = new OutputStreamWriter(fos, "UTF-8");
+
             template.process(root, out);
             out.flush();
         } catch (IOException | TemplateException e) {
             e.printStackTrace();
+        } finally {
+            try{
+                out.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            } 
         }
     }
 }
+

@@ -1,0 +1,236 @@
+﻿<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>jerry</Author>
+  <LastAuthor>Windows 鐢ㄦ埛</LastAuthor>
+  <Created>2006-09-13T11:21:00Z</Created>
+  <LastSaved>2019-08-27T01:12:40Z</LastSaved>
+  <Version>14.00</Version>
+ </DocumentProperties>
+ <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <KSOProductBuildVer dt:dt="string">2052-11.1.0.8894</KSOProductBuildVer>
+ </CustomDocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>7515</WindowHeight>
+  <WindowWidth>19575</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="瀹嬩綋" x:CharSet="134" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="m196949088">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="瀹嬩綋" x:CharSet="134" ss:Size="11" ss:Color="#000000"
+    ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="m196949108">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="瀹嬩綋" x:CharSet="134" ss:Size="11" ss:Color="#000000"
+    ss:Bold="1"/>
+   <Interior ss:Color="#EBF1DE" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s62">
+   <Alignment ss:Vertical="Bottom"/>
+  </Style>
+  <Style ss:ID="s70">
+   <Alignment ss:Vertical="Bottom"/>
+   <Font ss:FontName="Tahoma" x:Family="Swiss" ss:Size="9" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s71">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:FontName="Tahoma" x:Family="Swiss" ss:Size="16" ss:Color="#000000"
+    ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s72">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="瀹嬩綋" x:CharSet="134" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s73">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="瀹嬩綋" x:CharSet="134" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s74">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="瀹嬩綋" x:CharSet="134" ss:Color="#FF0000" ss:Bold="1"/>
+   <Interior ss:Color="#EBF1DE" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s75">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Tahoma" x:Family="Swiss" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+ </Styles>
+  <Worksheet ss:Name="汉川">
+  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="5" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s62" ss:DefaultColumnWidth="54"
+   ss:DefaultRowHeight="13.5">
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="57"/>
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="72.75"/>
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="98.25"/>
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="60"/>
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="80.25"/>
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="78.75"/>
+   <Row ss:AutoFitHeight="0" ss:Height="18">
+    <Cell ss:MergeAcross="5" ss:StyleID="m196949088"><Data ss:Type="String">娉曟仼鑾庢磥鍏?-蹇嵎3.0娲佸叿</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="16.5" ss:StyleID="s71">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">鍝佺墝</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">鍨嬪彿</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">瑙勬牸</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">浠锋牸</Data></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">鍥剧墖</Data></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">澶囨敞</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="60">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">杩炰綋搴т究鍣?</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">FB16127</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">L710*W420*H700</Data></Cell>
+    <Cell ss:StyleID="s74"><Data ss:Type="Number">222</Data></Cell>
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">瀹㈡埧锛屽潙璺?300鍜?400</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="60">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">连体座便器（无标）</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">FB16127</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">L710*W420*H700</Data></Cell>
+    <Cell ss:StyleID="s74"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">客房/公区，坑距300/400</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="60">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">定制半嵌台盆（无标）</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">FN4328（单孔）</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">L600*W475*H180</Data></Cell>
+    <Cell ss:StyleID="s74"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">金标大盆，台面半嵌盆，适用于卫生间。</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="60">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">专供半嵌台盆（无标）</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">FN4355（定制无标）</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">L420*W420*H140</Data></Cell>
+    <Cell ss:StyleID="s74"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">金标小款半嵌圆盆，适用于卫生间和干湿分离的客房使用。适合台面长度有局限（长度最小600mm）的安装条件</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="60">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">定制半挂盆（无标）</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">FN4322</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">L455*W455*H170</Data></Cell>
+    <Cell ss:StyleID="s74"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">金标小款半挂方盆，适用于卫生间和干湿分离的客房使用。适合台面深度有局限（深度最小380mm）的安装条件</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="60">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">定制小便斗（无标）</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">FN7055</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">L270*W360*H680</Data></Cell>
+    <Cell ss:StyleID="s74"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">公区</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="60">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">定制小便斗感应器（无标）</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">F-203</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">L140*W140</Data></Cell>
+    <Cell ss:StyleID="s74"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">公区</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20.25">
+    <Cell ss:MergeAcross="5" ss:MergeDown="1" ss:StyleID="m196949108"><ss:Data
+      ss:Type="String" xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+        html:Color="#000000">浠ヤ笂鎶ヤ环鏄?</Font><Font html:Color="#FF0000">涓婃捣甯?</Font><Font
+        html:Color="#000000">蹇嵎3.0娲佸叿鎸夌収</Font><Font html:Color="#FF0000">90</Font><Font
+        html:Color="#000000">濂楁暣浣撶殑鏈?浣庢姤浠凤紝姝や环鍚竴娆¤繍璐癸紝涓嶅惈鍗歌揣锛屼笉寮?绁紝寮?绁ㄥ彟鍔?5涓偣銆備緵璐у懆鏈熻嚦灏戦渶鎻愭棭30澶╁憡鐭ワ紝璋㈣阿锛?</Font></B></ss:Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20.25"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.69930555555555596"
+     x:Right="0.69930555555555596" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>200</HorizontalResolution>
+    <VerticalResolution>300</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>3</ActiveRow>
+     <RangeSelection>R4:R9</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

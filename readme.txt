@@ -1,10 +1,13 @@
 mvn archetype:generate
 
-mvn install:install-file -Dfile=ojdbc6.jar -DgroupId=ojdbc -DartifactId=ojdbc6 -Dversion=11.2.0.4.0-atlassian-hosted -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file -Dfile=ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.4.0 -Dpackaging=jar -DgeneratePom=true
 mvn compile
 mvn package
 mvn exec:java -Dexec.mainClass="lab.crazyspark.Demo"
 mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForReport"
+mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForOffer"
+
+
 
 driverClassName=oracle.jdbc.OracleDriver
 url=jdbc:oracle:thin:@10.19.1.2:1521:uatora02
@@ -80,3 +83,11 @@ FROM rpt_fxq_tb_company_ms partition (pt20170527000000)；
 show create table ods_cthx_web_org_dpt_map
 
  mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForTable" -Dexec.cleanupDaemonThreads=false
+
+在 工作表设置 出现 XML 错误
+原因:	无效值
+文件:	D:\work\myDataConvert\1.xml
+组:	Worksheet
+标志:	Table
+ATTRIB:	ExpandedRowCount
+值:	5
