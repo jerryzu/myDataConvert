@@ -25,10 +25,10 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.wrappers.StringTrimmedResultSet;
 
-public class DoForcontract {
+public class DoForContract {
     public static void main(String args[]) {
-        DoForcontract doForcontract  = new DoForcontract();
-        doForcontract.doFreemarker();
+        DoForContract doForContract  = new DoForContract();
+        doForContract.doFreemarker();
     }
 
     public void doFreemarker() {
@@ -36,14 +36,15 @@ public class DoForcontract {
         
         OutputStreamWriter out = null;
         try {
-            // cfg.setDirectoryForTemplateLoading(new File("/app/work/myDataConvert/src/main/resources"));
-            cfg.setDirectoryForTemplateLoading(new File("D:\\work\\myDataConvert\\src\\main\\resources"));
+            cfg.setDirectoryForTemplateLoading(new File("/app/work/myDataConvert/src/main/resources"));
+            //cfg.setDirectoryForTemplateLoading(new File("D:\\work\\myDataConvert\\src\\main\\resources"));
             
             cfg.setDefaultEncoding("UTF-8");
             cfg.setNumberFormat("0.00");
             // cfg.setObjectWrapper(new DefaultObjectWrapper());
 
-            Template template = cfg.getTemplate("faenza-contract.xml","utf-8");
+			Template template = cfg.getTemplate("faenza-contract.xml","utf-8");
+			//Template template = cfg.getTemplate("contract.ftl","utf-8");
             template.setNumberFormat("#");
 
             List<CSContract> cscontracts = new ArrayList<CSContract>();
@@ -62,7 +63,7 @@ public class DoForcontract {
 
                 for (CSContract obj : cscontracts) {
                     String contractitemsql = String.format("SELECT * from faenza.contractdetails WHERE contractid = %s order by contractid, itemid",
-                            obj.getcontractid());
+                            obj.getContractid());
                     List<CSContractItem> contractitems = runner.query(contractitemsql, new BeanListHandler<CSContractItem>(CSContractItem.class));
                     obj.setContractitems(contractitems);
                 }
@@ -76,7 +77,7 @@ public class DoForcontract {
 
             out = new OutputStreamWriter(System.out, "UTF-8");
             
-            FileOutputStream  fos = new FileOutputStream("d:\\1.xml", false);
+            FileOutputStream  fos = new FileOutputStream("/app/1.xml", false);
             out = new OutputStreamWriter(fos, "UTF-8");
 
             template.process(root, out);

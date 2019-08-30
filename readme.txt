@@ -6,6 +6,7 @@ mvn package
 mvn exec:java -Dexec.mainClass="lab.crazyspark.Demo"
 mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForReport"
 mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForOffer"
+mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForContract"
 
 
 
@@ -124,3 +125,14 @@ try {
   response.addHeader("Content-Disposition", "attachment;filename=fileName"+".xls");
 创建工作薄的时候，用Workbook workbook = new HSSFWorkbook();
 这样可以正常导出xls格式
+
+<w:tbl>
+<w:tr>
+	<w:tc>
+	--重新开启合并
+	<w:vmerge w:val="restart"/>
+	--合并操作继续
+	<w:vmerge w:val="continue"/>
+	</w:tc>
+</w:tr>
+</w:tbl>
