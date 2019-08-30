@@ -23,4 +23,3 @@ ${offeritem.setuppicture}
 ${offeritem.remark}
 </#list>
 </#list>
-

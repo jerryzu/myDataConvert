@@ -91,3 +91,36 @@ show create table ods_cthx_web_org_dpt_map
 标志:	Table
 ATTRIB:	ExpandedRowCount
 值:	5
+
+1、合并单元格：
+        要实现上图前两列单元格合并，需要在ftl模板中对应行对应列的Cell单元格中添加ss:MergeDown="${size}"，这表示向下合并几格，如上图向下合并2格，其中size最好设为动态的。
+
+2、导出的Excel表格只能在WPS中展示，但用office2007打不开：
+         查找了很久原因，发现是因为在ftl模板中每一行数据前两格都被设置出现姓名、医生角色两个合并单元格。
+        解决办法：在设置每行数据时，对合并单元格姓名、医生角色进行index判断，使每个医生的第一行数据设置合并单元格，其余数据行不能出现合并单元格，如符合条件<#if f_index % (size+1) == 0 >才允许显示。
+3、Excel表格中的数据换行：
+在需要换行的单元格中设置ss:WrapText="1"，调节需要换行的那一行的整体高度：<Row ss:AutoFitHeight="0" ss:Height="37.5" >
+
+try {
+// 导出
+    request.setCharacterEncoding("UTF-8");
+    response.setContentType("application/x-download;");
+    response.setHeader("Content-disposition", "attachment; filename="
+            + new String("导出的文件名字.xls".getBytes("gb2312"), "ISO8859-1"));
+    freemarkerConfiguration.getTemplate("export-format-requisition.xml").process(data,response.getWriter());
+}catch (Exception e){
+    log.error("文件下载异常", e);
+    e.printStackTrace();
+}
+
+导出xlsx格式：
+ response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+ response.addHeader("Content-Disposition", "attachment;filename=fileName" + ".xlsx");
+创建工作薄的时候，用Workbook workbook = new XSSFWorkbook();
+这样可以正常导出xlsx格式
+
+导出xls格式：
+ response.setContentType("application/vnd.ms-excel");
+  response.addHeader("Content-Disposition", "attachment;filename=fileName"+".xls");
+创建工作薄的时候，用Workbook workbook = new HSSFWorkbook();
+这样可以正常导出xls格式
