@@ -4,9 +4,11 @@ mvn install:install-file -Dfile=ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojd
 mvn compile
 mvn package
 mvn exec:java -Dexec.mainClass="lab.crazyspark.Demo"
+mvn exec:java -Dexec.mainClass="lab.crazyspark.PathDemo"
 mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForReport"
 mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForOffer"
 mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForContract"
+mvn exec:java -Dexec.mainClass="lab.crazyspark.DoForTable"  -Dexec.cleanupDaemonThreads=false
 
 
 
@@ -136,3 +138,35 @@ try {
 	</w:tc>
 </w:tr>
 </w:tbl>
+=======
+
+git fetch origin
+git diff master origin/master
+
+public static void main(String[] args) {
+String osName = System.getProperty("os.name");//获取指定键（即os.name）的系统属性,如：Windows 7。
+String OSname=null;
+if (Pattern.matches("Linux.*", osName)) {
+OSname="Linux";
+} else if (Pattern.matches("Windows.*", osName)) {
+OSname="Windows";
+} else if (Pattern.matches("Mac.*", osName)) {
+OSname="Mac";
+}
+System.out.println("This OS is "+OSname);
+System.out.println("osName:"+osName);
+}
+
+https://blog.csdn.net/qq_33251859/article/details/80927353
+
+
+SELECT M.OWNER SCHEMANAME, M.TABLE_NAME TABLENAME, M.COLUMN_NAME FIELDNAME
+        , M.DATA_TYPE DATATYPE, M.DATA_LENGTH FIELDLEN, M.DATA_PRECISION PRECISION_
+        , M.DATA_SCALE SCALE_, M.COLUMN_ID FIELDID, M.CHAR_USED CHARUSED, D.COMMENTS REMARK, D.COMMENTS FIELDDESC
+FROM ALL_TAB_COLUMNS M LEFT JOIN ALL_COL_COMMENTS D 
+        ON M.OWNER = D.OWNER AND M.TABLE_NAME = D.TABLE_NAME
+                AND M.COLUMN_NAME = D.COLUMN_NAME
+
+SELECT M.OWNER SCHEMANAME, M.TABLE_NAME TABLENAME, D.COMMENTS REMARK 
+FROM ALL_TABLES M LEFT JOIN ALL_TAB_COMMENTS D 
+	ON M.OWNER = D.OWNER AND M.TABLE_NAME = D.TABLE_NAME                
