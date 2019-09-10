@@ -136,3 +136,23 @@ try {
 	</w:tc>
 </w:tr>
 </w:tbl>
+
+
+git fetch origin
+git diff master origin/master
+
+public static void main(String[] args) {
+String osName = System.getProperty("os.name");//获取指定键（即os.name）的系统属性,如：Windows 7。
+String OSname=null;
+if (Pattern.matches("Linux.*", osName)) {
+OSname="Linux";
+} else if (Pattern.matches("Windows.*", osName)) {
+OSname="Windows";
+} else if (Pattern.matches("Mac.*", osName)) {
+OSname="Mac";
+}
+System.out.println("This OS is "+OSname);
+System.out.println("osName:"+osName);
+}
+
+https://blog.csdn.net/qq_33251859/article/details/80927353
