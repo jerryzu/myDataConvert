@@ -31,7 +31,7 @@ public class DoForTable {
     public void doFreemarker() {
         Configuration cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
         try {
-            cfg.setDirectoryForTemplateLoading(new File("/app/work/myDataConvert/src/main/resources"));
+            cfg.setDirectoryForTemplateLoading(new File(System.getProperty("user.dir") + "/resources/"));            
             Template template = cfg.getTemplate("table.ftl");
             template.setNumberFormat("#");
 
