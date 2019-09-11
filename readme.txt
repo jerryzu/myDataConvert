@@ -138,7 +138,6 @@ try {
 	</w:tc>
 </w:tr>
 </w:tbl>
-=======
 
 git fetch origin
 git diff master origin/master
@@ -173,4 +172,3 @@ FROM ALL_TABLES M LEFT JOIN ALL_TAB_COMMENTS D
 
 
 svn export svn://10.19.0.22/edw/08src/alidata/edwproject/taskfile/sql/
-        
