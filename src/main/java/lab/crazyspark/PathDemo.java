@@ -33,4 +33,24 @@ public class PathDemo {
                 //这里访问文件的时候目录前面不能加/
 		System.out.println(PathDemo.class.getClassLoader().getResource("images/me.jpg"));
 	}
+	
+	public void SvnDiff(int rev1, int rev2)
+        {
+            try
+            {
+                var p = new Process();
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.StartInfo.FileName = "svn";
+                string arg = string.Format("diff -r {0}:{1} --summarize --xml > SvnDiff.xml", rev1, rev2);
+                Console.WriteLine(arg);
+                p.StartInfo.Arguments = arg;
+                p.Start();
+                p.WaitForExit();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
 }
