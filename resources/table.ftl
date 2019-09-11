@@ -21,3 +21,5 @@ create table `${t.tablename}`(
 /*!50500 partition by range  columns(pt)
 (partition pt${.now?string("yyyyMMdd")}000000 values less than ('${.now?string("yyyyMMdd")}999999') engine = innodb) */;
 </#list>
+
+
