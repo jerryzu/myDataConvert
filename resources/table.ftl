@@ -1,5 +1,5 @@
 <#list tables as t>
-drop table `${t.tablename}`;
+drop table if exists `${t.tablename}`;
 create table `${t.tablename}`(
   <#list t.fields as field>
 <#if field.datatype?lower_case == "datetime" ||field.datatype == "longtext" ||field.datatype == "date" || field.datatype == "timestamp"  || field.datatype == "smallint">`${field.fieldname}` ${field.datatype} comment  '${field.fielddesc!""}' <#if field_has_next>,</#if>

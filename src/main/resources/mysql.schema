@@ -1,0 +1,20 @@
+create table sys_tables(
+  tableid int,
+  tablename varchar(64) not null,
+  tabledesc varchar(2048) not null
+) default charset=utf8 default collate=utf8_general_ci;
+
+create table sys_fields(
+  id int not null,
+  tableid int not null,
+  tablename varchar(64),
+  fieldid int not null,
+  fieldname varchar(64),
+  datatype varchar(64),
+  fieldlen int,
+  precision_ bigint(21) unsigned,
+  scale_ bigint(21) unsigned,
+  fielddesc varchar(1024),
+  nullable varchar(3),
+  charused varchar(1)
+) engine=innodb default charset=utf8 default collate=utf8_general_ci;
