@@ -11,8 +11,8 @@ public class CSField {
     private String datatype;
     private Integer fieldlen;
     private String charused;
-    private Integer scale_;
-    private Integer precision_;
+    private Integer scale;
+    private Integer precision;
     private Integer nullable;
     private String remark;
     private Integer delivertableid;
@@ -99,20 +99,20 @@ public class CSField {
         this.charused = charused;
     }
 
-    public Integer getScale_() {
-        return scale_;
+    public Integer getScale() {
+        return scale;
     }
 
-    public void setScale_(Integer scale_) {
-        this.scale_ = scale_;
+    public void setScale(Integer scale) {
+        this.scale = scale;
     }
 
-    public Integer getPrecision_() {
-        return precision_;
+    public Integer getPrecision() {
+        return precision;
     }
 
-    public void setPrecision_(Integer precision_) {
-        this.precision_ = precision_;
+    public void setPrecision(Integer precision) {
+        this.precision = precision;
     }
 
     public Integer getNullable() {
